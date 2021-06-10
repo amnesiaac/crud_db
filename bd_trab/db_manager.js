@@ -52,6 +52,10 @@ async function updateCidade(db,codcid,nome,codest){
 async function deleteCidade(db,codcid){
     await db.query('DELETE FROM cidade WHERE codemp ='+parseInt(codcid))
 }
+async function readCidade(db){
+  var resp = await db.query("SELECT cidade.*,estado.nome FROM cidade, estado WHERE cidade.codest = estado.codest")
+  return resp;
+}
 async function insertEstados(db,codest,nome){
     const dbString = "INSERT INTO empregado(codest,nome)VALUES($1,$2)";
     const values = [parseInt(codest),nome] 
@@ -72,6 +76,10 @@ async function updateEstado(db,codest,nome){
 }
 async function deleteEstado(db,codest){
     await db.query('DELETE FROM estado WHERE codemp ='+parseInt(codest))
+}
+async function readEstado(db){
+  var resp = await db.query("SELECT * FROM estado")
+  return resp;
 }
 async function insertProjetos(db,codproj,nome,codempresa){
     const dbString = "INSERT INTO empregado(codproj,nome,codempresa)VALUES($1,$2,$3)";
@@ -94,6 +102,10 @@ async function updateProjetos(db,codproj,nome,codempresa){
 async function deleteProjeto(db,codproj){
     await db.query('DELETE FROM projeto WHERE codemp ='+parseInt(codproj))
 }
+async function readProjeto(db){
+  var resp = await db.query("SELECT projeto.*,empresa.nome FROM projeto,empresa WHERE projeto.codempresa = empresa.codempresa")
+  return resp;
+}
 async function insertAlocacao(db,codemp,codproj,qtdhoras){
     const dbString = "INSERT INTO empregado(codemp,codproj,qtdhoras)VALUES($1,$2,$3)";
     const values = [parseInt(codemp),codproj,parseInt(qtdhoras)] 
@@ -102,6 +114,10 @@ async function insertAlocacao(db,codemp,codproj,qtdhoras){
       } catch (err) {
         console.log(err.stack)
       }
+}
+async function readAlocacao(db){
+  var resp = await db.query("SELECT alocacao.qtdhoras,empregado.nome,projeto.nome FROM alocacao,projeto,empregado WHERE alocacao.codemp = empregado.codemp AND alocacao.codproj = projeto.codproj")
+  return resp;
 }
 module.exports = {
     db_connect,
@@ -118,5 +134,9 @@ module.exports = {
     deleteCidade,
     deleteEstado,
     deleteProjeto,
-    readFuncionario
+    readFuncionario,
+    readAlocacao,
+    readCidade,
+    readEstado,
+    readProjeto
   };

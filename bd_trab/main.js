@@ -73,10 +73,38 @@ ipcMain.on('deleteprojeto',(event,arg)=>{
 ipcMain.on('readfuncionario',(event,arg)=>{
  readFuncionario();
 })
+ipcMain.on('readcidade',(event,arg)=>{
+  readCidade();
+ })
+ ipcMain.on('readestado',(event,arg)=>{
+  readEstado();
+ })
+ ipcMain.on('readprojeto',(event,arg)=>{
+  readProjeto();
+ })
+ ipcMain.on('readalocacao',(event,arg)=>{
+  readAlocacao();
+ })
 async function readFuncionario(){
 var resp = await db_manager.readFuncionario(db)
 console.log(resp.rows);
 }
+async function readCidade(){
+  var resp = await db_manager.readCidade(db)
+  console.log(resp.rows);
+  }
+async function readAlocacao(){
+  var resp = await db_manager.readAlocacao(db)
+  console.log(resp.rows);
+  }
+async function readEstado(){
+    var resp = await db_manager.readEstado(db)
+    console.log(resp.rows);
+  }
+async function readProjeto(){
+    var resp = await db_manager.readProjeto(db)
+    console.log(resp.rows);
+  }
 app.whenReady().then(createWindow)
   
 app.on('activate', () =>{

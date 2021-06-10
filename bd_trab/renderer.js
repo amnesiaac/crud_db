@@ -115,3 +115,15 @@ function deleteProjeto(){
 function readFuncionario(){
     ipcRenderer.send('readfuncionario')
 }
+function readEstado(){
+    ipcRenderer.send('readestado')
+}
+function readCidade(){
+    ipcRenderer.send('readcidade')
+}
+function readProjeto(){
+    ipcRenderer.send('readprojeto')
+}
+function readAlocacao(){
+    ipcRenderer.send('readalocacao')
+}
