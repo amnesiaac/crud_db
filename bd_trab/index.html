@@ -1,0 +1,67 @@
+<html>
+    <head>
+    <title>CRUD BD</title>
+    <link rel="stylesheet" href="./node_modules/milligram/dist/milligram.css">
+    <script type="text/javascript"src="renderer.js"></script>
+    </head>
+    <body>
+    <div class="geral">
+    
+    <div id='create_funcionario'>
+    <p>Cadastrar Funcionario</p>
+    <label for="codemp">codigo funcionario</label>
+     <input type="text" id="codemp">
+     <label for="nomeFuncionario">nomefuncionario</label>
+     <input type="text" id="nomeFuncionario">
+     <label for="codprof">codigo profissão</label>
+     <input type="text" id="codprof">
+     <button class='button' onclick="formFuncionario()">Cadastrar</button> <button class='button' onclick="attFuncionario()">Atualizar</button>
+     <button class='button' onclick="deleteFuncionario()">Deletar</button>
+     <button class='button' onclick="readFuncionario()">ler</button>
+    </div><br>
+    <div id='create_estado'>
+        <p>Cadastrar Estado</p>
+        <label for="codest">codigo estado</label>
+        <input type="text" id="codest">
+        <label for="nomeEstado">nome estado</label>
+        <input type="text" id="nomeEstado">
+        <button class='button' onclick="formEstado()">Cadastrar</button> <button class='button' onclick="attEstado()">Atualizar</button>
+        <button class='button' onclick="deleteEstado()">Deletar</button>
+        
+    </div><br>
+       <div id='create_cidade'>
+        <p>Cadastrar Cidade</p>
+        <label for="codcid">codigo cidade</label>
+        <input type="text" id="codcid">
+        <label for="nomeCidade">nome cidade</label>
+        <input type="text" id="nomeCidade">
+        <label for="codest">codigo estado</label>
+        <input type="text" id="codest">
+        <button class='button' onclick="formCidade()">Cadastrar</button> <button class='button' onclick="attCidade()">Atualizar</button>
+        <button class='button' onclick="deleteCidade()">Deletar</button>
+    </div><br>
+       <div id='create_projeto'>
+        <p>Cadastrar Projeto</p>
+        <label for="codproj">codigo projeto</label>
+        <input type="text" id="codproj">
+        <label for="nomeProjeto">nome projeto</label>
+        <input type="text" id="nomeProjeto">
+        <label for="codempresa">codigo empresa</label>
+        <input type="text" id="codempresa">
+        <button class='button' onclick="formProjeto()">Cadastrar</button> <button class='button' onclick="attProjeto()">Atualizar</button>
+        <button class='button' onclick="deleteProjeto()">Deletar</button>
+    </div><br>
+       <div id='create_alocacao'>
+        <p>Cadastrar Alocacao</p>
+        <label for="codemp">codigo empregado</label>
+        <input type="text" id="codemp">
+        <label for="codproj">codigo projeto</label>
+        <input type="text" id="codproj">
+        <label for="qtdhoras">quantidade horas</label>
+        <input type="text" id="qtdhoras">
+        <button class='button' onclick="formAlocacao()">Cadastrar</button>
+       </div><br>
+    
+    
+    </body>
+    </html>
